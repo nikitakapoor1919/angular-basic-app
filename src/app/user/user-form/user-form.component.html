@@ -1,0 +1,102 @@
+<mat-card class="card-heading">
+    <div class="top-box"></div>
+    <p class="heading"><strong>Please Fill Your Personal Details</strong></p>
+    <p class="sub-heading">We will not share your data without your permission</p>
+    <div *ngIf="userFormGroup.invalid && formStatus && !formSubmitted" class="error"> Form not validated</div>
+    <div *ngIf="formSubmitted" class="success"> Form submitted successfully</div> <br/>
+    <div *ngIf="dataLoaded==true">
+        <mat-spinner  [diameter]="50" class="spinner"></mat-spinner>
+    </div>
+</mat-card>
+<mat-card class="card">
+    <form [formGroup]="userFormGroup" (ngSubmit)="onFormSubmit()">
+        <div>
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Email Id</mat-label>
+                <input matInput formControlName="email" [placeholder]="emailPlaceHolder">
+                <mat-error *ngIf="userFormGroup.get('email')?.invalid">Email Id is Invalid</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>First Name</mat-label>
+                <input matInput [placeholder]="nameFirstPlaceHolder" formControlName="firstName">
+                <mat-error *ngIf="userFormGroup.get('name')?.invalid">This field is Required</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Last Name</mat-label>
+                <input matInput [placeholder]="nameLastPlaceHolder" formControlName="lastName">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Pincode</mat-label>
+                <input matInput formControlName="pincode" [placeholder]="pincodePlaceHolder">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Age</mat-label>
+                <input matInput formControlName="age" [placeholder]="agePlaceHolder">
+                <mat-error *ngIf="userFormGroup.get('age')?.invalid">Invalid Age</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Contact</mat-label>
+                <input matInput formControlName="contact" [placeholder]="contactPlaceHolder">
+                <mat-error *ngIf="userFormGroup.get('contact')?.invalid">Phone no is(minimum length 10,numbers are only allowed)</mat-error>
+            </mat-form-field>
+        </div>
+      <div>
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Address</mat-label>
+                <textarea matInput formControlName="address" matTextareaAutosize matAutosizeMinRows=30 [placeholder]="addressPlaceHolder"></textarea>
+              </mat-form-field>
+        </div>
+        <!-- <div>
+            <table>
+               <tr>
+                <td>First Name</td>
+                <td>{{this.userFormGroup.get('firstName')?.value}}</td>
+               </tr>
+               <tr>
+                <td>Last Name</td>
+                <td>{{this.userFormGroup.get('lastName')?.value}}</td>
+               </tr>
+               <tr>
+                <td>Pincode</td>
+                <td>{{this.userFormGroup.get('pincode')?.value}}</td>
+               </tr>
+               <tr>
+                <td>Age<br/></td>
+                <td>{{this.userFormGroup.get('age')?.value}}</td>
+               </tr>
+               <tr>
+                <td>Address</td>
+                <td>{{this.userFormGroup.get('address')?.value}}</td>
+               </tr>
+               <tr>
+                <td>Email ID</td>
+                <td>{{this.userFormGroup.get('email')?.value}}</td>
+               </tr>
+               <tr>
+                <td>Contact</td>
+                <td>{{this.userFormGroup.get('contact')?.value}}</td>
+               </tr>
+            </table>
+        </div> -->
+    </form>
+</mat-card>
+<mat-card class="card-submit">
+    <div class="example-button-row-clear">
+        <button class="form-button" mat-raised-button color="primary" (click) = "resetForm()">Clear</button>
+      </div>
+      <div class="example-button-row-submit">
+        <button class="form-button" mat-raised-button color="primary" (click) = "onFormSubmit()">Submit</button>
+      </div>
+</mat-card>
+
+<app-user-home></app-user-home>

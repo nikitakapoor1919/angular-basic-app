@@ -1,0 +1,23 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav">
+        <table>
+            <tr>
+                <td><mat-icon>home</mat-icon></td>
+                <td>Home</td>
+            </tr>
+            <!-- <tr (click)="drawer.toggle()">
+              <td><mat-icon>account_circle</mat-icon></td>
+              <td>Personal Details</td>
+            </tr> -->
+        </table>
+    </mat-drawer>
+    
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
+       <mat-icon>menu</mat-icon>
+     </button>
+     <span>My App</span>
+    </mat-toolbar> 
+    <app-user-form></app-user-form>
+  
+  </mat-drawer-container>

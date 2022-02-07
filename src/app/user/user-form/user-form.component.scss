@@ -1,0 +1,90 @@
+.card {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+}
+.card-submit {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+  height: 40px;
+  margin-bottom: 100px;
+}
+.card-heading {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+  color: #673ab7;
+  text-align: center;
+}
+.input-field {
+  width: 100%;
+}
+.example-button-row-submit {
+  float: right;
+}
+.example-button-row-clear {
+  float: left;
+}
+.double-field {
+  display: flex;
+  justify-content: space-between;
+}
+.input-field-double {
+  width: 400px;
+}
+.heading {
+  font-size: 2.2rem;
+}
+.sub-heading {
+  font-size: 1rem;
+  color: gray;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.top-box {
+  background-color: #673ab7;
+  height: 10px;
+  margin-bottom: 50px;
+}
+.error {
+  color: red;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.success {
+  color: green;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.spinner {
+  color: #673ab7;
+  margin: 0 auto;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.input-gender{
+  margin-bottom: 20px;
+  padding:10px;
+}
+.form-button{
+  width:150px;
+}
+.input-gender-label{
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 1100px) {
+  .double-field {
+    display: block;
+  }
+  .input-field-double {
+    width: 100%;
+  }
+  .heading {
+    font-size: 1.5rem;
+  }
+  .form-button{
+    width:70px;
+  }
+}
